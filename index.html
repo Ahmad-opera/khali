@@ -2,26 +2,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/fontawesome.min.css">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body class="bg-green-800">
-    <img src="https://camicroscope.github.io/banner1.jpg" alt="banner here!" class="mx-auto w-full shadow-xl">
+<body class="bg-green-100 text-gray-700">
 
-    <form action="" class="mx-auto w-1/5 mt-10">
+    <form action="">
 
-        <div class="p-10 b-2 rounded shadow border-dashed bg-white border-4 border-gray-600 overflow-hidden mx-auto">
-            <h1 class="text-xl font-semibold">Drop a file here!</h1>
-            <input  dropzone="link" type="file" name="file" id="file" class="p-3 -ml-10 bg-green-500" style="background-color: transparent;">
+    <div class="grid">
+        
+            <div class="w-4/12 m-16 rounded-lg overflow-hidden inline-block shadow-lg">
+        <div class="px-4 py-6 flex items-center bg-white rounded-md">
+            <input class="text-xl  w-4/12" value="Class 1"/>
+            <i class="fa fa-pen px-3"></i>
+            <div class="ml-20 text-right">
+                <i class="fa fa-trash"></i>
+            </div>
         </div>
-        <button type="submit" class="bg-green-700 shadow-xl focus:outline-none py-2 px-6 rounded-full text-white font-semibold mx-auto block mt-5">Train</button>
-    </form>
+        <div class="w-full flex">
+                <div class="w-6/12">
+                    <div class="p-4 border-tr-2 bg-green-100 shadow-inner ">
+                        <h3 class="font-semibold">File</h3>
+                        <div class="p-2 overflow-hidden">
+                            <div class="text-blue-500 text-center rounded-lg bg-blue-100 p-4 text-sm">
+                                Choose images from your files or drag & drop here
+                            </div>
+                            <div class="text-blue-500 mt-4 text-center rounded-lg bg-blue-100 p-4 text-sm">
+                                Choose from Micro
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+               
+            <div class="w-6/12 border-t bg-white">
+                <div class="p-4 ">
+                    
+                </div>
+            </div>
+    </div>
+        </div>
+         
+    
 
-    <style>
+    <div class="w-2/12 block m-16 bg-white rounded-lg overflow-hidden inline-block mx-auto my-auto shadow-lg">
+        <div class="p-0">
+          <h2 class="p-3 text-left font-semibold">Training</h2>  
+          <button class="bg-gray-200 py-2 px-4 mt-2 mx-auto block text-center">Train Model</button>
+          </div>
+            <div class="w-full bg-white border-t text-gray-500 font-semibold focus:outline-none text-left pl-3 py-2 mt-3" onclick="showAdvancedMenu()">Advanced <div id="" class="px-4 py-2 float-right"><i class="fa fa-angle-up advancedbtn"></i></div></div>
+            <div id="advanced" class="collapsed hidden">
+                <div class="p-4 font-semibold  border-b py-2">
+                    <label for="epochs">Epochs:</label>
+                    <input type="number" name="epoch" id="epoch" value="1" maxlength="2" class="bg-green-100 text-blue-500 font-semibold px-1 py-1 focus:outline-none shadow-inner w-1/5">
+                </div>
+                <div class="p-4 font-semibold  border-b  py-2">
+                    <label for="batch">Batch Size:</label>
+                    <select name="batch" id="batch" class="text-blue-500 focus:outline-none bg-green-100 shadow-inner">
+                        <option value="16">16</option>
+                        <option value="32">32</option>
+                        <option value="64">64</option>
+                        <option value="128">128</option>
+                        <option value="256">256</option>
+                        <option value="512">512</option>
+                    </select>
+                </div> 
+                <div class="p-4 font-semibold border-b py-2">
+                    <label for="learningrate">Learning Rate:</label>
+                    <br>
+                    <input type="number" id="learningratenums" maxlength="6" class="pl-4 py-1 mt-2 focus:outline-none w-6/12 text-blue-500 bg-green-100 shadow-inner" value="0.001" min="0.00001" max="0.1" step="0.00001">
+                </div>
+                <div class="p-4 font-semibold border-b py-2 flex">
+                    <div class="block mx-auto">
+                        
+                    <button type="reset" class="px-2 py-1 focus:bg-gray-200 focus:outline-none rounded-lg">
+                        <i class="fa fa-history"></i>
+                    </button>
+                    <button class="p-2 py-1 focus:bg-gray-200 focus:outline-none rounded-lg">
+                        <i class="fa fa-chart-bar"></i>
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    </style>
+          
+        <div class="block ml-10 mb-10 py-3 bg-white rounded-lg w-1/5 mx-auto my-auto inline-block text-center shadow-lg">
+            <div class="flex border-b items-center">
+                
+                <h1 class="font-semibold p-3 float-left">Preview</h1>
+               <button class="bg-blue-100 text-blue-500 px-3 focus:outline-none">
+                   <i class="fa fa-inbox  inline-block p-3"></i>Export Model
+               </button> 
+               
+            </div>
+            <p class="text-left text-sm p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, ipsa.</p> 
+            </div>
+        
+    </div>
+
+
+    
+    </div>
+</form>
+
+
+    
+
     
 </body>
 </html>
